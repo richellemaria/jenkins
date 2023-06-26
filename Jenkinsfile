@@ -20,6 +20,9 @@ pipeline{
          }
       }
       stage('Stage two'){
+        environment{
+               env_url= "stage.google.com"
+        }
          steps{
 
             echo "This is stage 2"

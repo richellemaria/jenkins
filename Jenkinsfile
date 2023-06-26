@@ -23,7 +23,7 @@ pipeline{
          steps{
 
             echo "This is stage 2"
-            echo Name of URL is ${env_url}
+            echo "Name of URL is ${env_url}"
          }
       }
 
@@ -31,7 +31,7 @@ pipeline{
         steps{
 
             echo "This is stage 3"
-            echo Name of URL is ${env_url}
+            echo "Name of URL is ${env_url}"
         }
       }
     }

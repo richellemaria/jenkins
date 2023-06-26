@@ -1,7 +1,7 @@
 pipeline{
     agent any
 
-    environmet{
+    environment{
         env_url= "practice.google.com"
     }
 

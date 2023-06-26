@@ -1,6 +1,10 @@
 pipeline{
     agent any
 
+    environmet{
+        env_url= "practice.google.com"
+    }
+
     stages{
       
       stage('Stage one'){
@@ -9,7 +13,8 @@ pipeline{
             sh '''
                 echo AWS practice
                 echo Devops pratice
-                
+                echo Name of URL is ${env_url}
+
             '''
 
          }
@@ -18,6 +23,7 @@ pipeline{
          steps{
 
             echo "This is stage 2"
+            echo Name of URL is ${env_url}
          }
       }
 
@@ -25,6 +31,7 @@ pipeline{
         steps{
 
             echo "This is stage 3"
+            echo Name of URL is ${env_url}
         }
       }
     }

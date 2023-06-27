@@ -14,7 +14,7 @@ pipeline{
     //             env
     //         '''
     //      }
-      }
+     // }
       stage('Stage two'){
         environment{
                env_url= "stage.google.com"

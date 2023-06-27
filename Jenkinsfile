@@ -1,8 +1,8 @@
 pipeline{
     agent any
     environment{
-        env_url        = "practice.google.com"
-        SSHCRED      = credentails('SSH_CRED')
+        env_url = "practice.google.com"
+        SSHCRED = credentails('SSH_CRED')
     }
     stages{
       stage('Stage one'){

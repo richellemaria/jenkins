@@ -2,7 +2,7 @@ pipeline{
     agent any
     environment{
         env_url        ="practice.google.com"
-        SSHCRED        =credentails('SSH_CRED')
+        //SSHCRED        =credentails('SSH_CRED')
     }
     stages{
       stage('Stage one'){
@@ -11,7 +11,7 @@ pipeline{
                 echo AWS practice
                 echo Devops pratice
                 echo Name of URL is ${env_url}
-                env     
+               
             '''
          }
       }

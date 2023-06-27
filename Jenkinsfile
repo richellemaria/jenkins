@@ -5,15 +5,15 @@ pipeline{
         SSHCRED = credentails('SSH_CRED')
     }
     stages{
-      stage('Stage one'){
-         steps {
-            sh '''
-                echo AWS practice
-                echo Devops pratice
-                echo Name of URL is ${env_url}
-                env
-            '''
-         }
+    //   stage('Stage one'){
+    //      steps {
+    //         sh '''
+    //             echo AWS practice
+    //             echo Devops pratice
+    //             echo Name of URL is ${env_url}
+    //             env
+    //         '''
+    //      }
       }
       stage('Stage two'){
         environment{

@@ -54,7 +54,7 @@ pipeline{
         }
       }
       stage("stage four"){
-        step{
+        steps{
             sh '''
             echo "this is stage 4"
             echo "Name of the url is ${env_url}

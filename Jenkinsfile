@@ -58,7 +58,7 @@ pipeline{
         //       parameters{
         //         string(name: 'Person', defaultValue: 'Mr Jenkins', description: 'who should say hello to?')
         //       }
-        }
+        //}
         steps{
             echo "This is stage 2"
             echo "Name of URL is ${env_url}"

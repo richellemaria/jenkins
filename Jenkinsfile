@@ -65,9 +65,10 @@ pipeline{
          }
       }
       stage("Stage three"){
-        when { anyof {
-            branch 'dev'
-            changeset "**/*.js"
+        when { 
+            anyof {
+             branch 'dev'
+             changeset "**/*.js"
             }
         }
         steps{

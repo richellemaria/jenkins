@@ -15,6 +15,28 @@ pipeline{
     //triggers{pollSCM('*/1 * * * *')}
 
     stages{
+       stage("parallel stages"){
+        parallel{
+            stage(parallel 1){
+               steps{
+                echo"In parallel 1"
+                sleep 15
+               }
+            }
+             stage(parallel 2){
+                steps{
+                echo"In parallel 2"
+                sleep 15
+                }
+            }
+             stage(parallel 3){
+                steps{
+                echo"In parallel 3"
+                sleep 15
+                }
+            }
+        }
+       }
        stage('Stage one'){
           steps {
              sh '''
@@ -29,13 +51,13 @@ pipeline{
         environment{
                env_url= "stage.google.com"
         }
-        input {
-              message "should we continue?"
-              ok "Yes, we should"
-              submitter "alice,bob"
-              parameters{
-                string(name: 'Person', defaultValue: 'Mr Jenkins', description: 'who should say hello to?')
-              }
+        // input {
+        //       message "should we continue?"
+        //       ok "Yes, we should"
+        //       submitter "alice,bob"
+        //       parameters{
+        //         string(name: 'Person', defaultValue: 'Mr Jenkins', description: 'who should say hello to?')
+        //       }
         }
         steps{
             echo "This is stage 2"
@@ -43,7 +65,10 @@ pipeline{
          }
       }
       stage("Stage three"){
-        when {branch 'dev'}
+        when { anyof {
+            branch 'dev'
+            changeset "**/*.js"
+            }
         steps{
             sh '''
             echo "This is stage 3"

@@ -23,13 +23,13 @@ pipeline{
                 sleep 15
                }
             }
-             stage("parallel 2"){
+            stage("parallel 2"){
                 steps{
                 echo"In parallel 2"
                 sleep 15
                 }
             }
-             stage("parallel 3"){
+            stage("parallel 3"){
                 steps{
                 echo"In parallel 3"
                 sleep 15

@@ -95,5 +95,8 @@ pipeline{
         always{
             echo "I will say Hello"
         }
+        aborted{
+            echo "I will say hello when aborted"
+        }
     }
 }

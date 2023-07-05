@@ -92,9 +92,9 @@ pipeline{
       }
     }
     post{
-        always{
-            echo "I will say Hello"
-        }
+        // always{
+        //     echo "I will say Hello"
+        // }
         aborted{
             echo "I will say hello when aborted"
         }

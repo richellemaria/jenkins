@@ -1,5 +1,7 @@
 pipeline{
-    agent any
+    agent{
+        label 'WS'
+    }
     environment{
         env_url = "practice.google.com"
         SSHCRED = credentials('SSH_CRED')
